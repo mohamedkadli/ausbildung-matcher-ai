@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Match Ergebnis</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f7f6; padding: 40px; }
+        .card { background: white; max-width: 600px; margin: auto; padding: 25px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .score { font-size: 36px; color: #27ae60; font-weight: bold; text-align: center; margin: 15px 0; }
+        ul { background: #eef9f2; padding: 15px 30px; border-radius: 5px; }
+        li { margin-bottom: 8px; }
+        a { display: block; text-align: center; margin-top: 20px; color: #2980b9; text-decoration: none; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h2>Ergebnis für {{ applicant.name }}</h2>
+        <p><strong>Stelle:</strong> {{ position.title }}</p>
+        
+        <div class="score">Match-Score: {{ result.total_score }}%</div>
+
+        <h3>📋 Feedback & Empfehlungen:</h3>
+        <ul>
+            {% for advice in advices %}
+                <li>{{ advice }}</li>
+            {% endfor %}
+        </ul>
+
+        <a href="/">⬅️ Neue Analyse starten</a>
+    </div>
+</body>
+</html>

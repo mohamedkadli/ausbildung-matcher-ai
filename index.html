@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Ausbildung Matcher AI</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f4f7f6; padding: 40px; }
+        .card { background: white; max-width: 550px; margin: auto; padding: 30px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        h2 { color: #2c3e50; text-align: center; margin-bottom: 25px; }
+        label { font-weight: 600; margin-top: 14px; display: block; color: #34495e; }
+        input, select { width: 100%; padding: 10px; margin-top: 6px; border: 1px solid #bdc3c7; border-radius: 6px; box-sizing: border-box; font-size: 14px; }
+        button { background: #27ae60; color: white; border: none; padding: 12px; width: 100%; margin-top: 25px; border-radius: 6px; cursor: pointer; font-size: 16px; font-weight: bold; transition: 0.3s; }
+        button:hover { background: #219150; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h2>🚀 Ausbildung Matcher AI</h2>
+        <form action="/analyze" method="POST">
+            <label>Name des Bewerbers:</label>
+            <input type="text" name="name" placeholder="z.B. Mohamed Kadli" required>
+
+            <label>Deutsch Sprachniveau:</label>
+            <select name="language">
+                <option value="A1">A1 (Anfänger)</option>
+                <option value="A2">A2 (Grundlegende Kenntnisse)</option>
+                <option value="B1">B1 (Fortgeschrittene Sprachverwendung)</option>
+                <option value="B2" selected>B2 (Selbstständige Sprachverwendung)</option>
+                <option value="C1">C1 (Fachkundige Sprachkenntnisse)</option>
+                <option value="C2">C2 (Annähernd muttersprachliche Kenntnisse)</option>
+                <option value="Muttersprache">Muttersprache</option>
+            </select>
+
+            <label>Höchster Schul- / Bildungsabschluss:</label>
+            <select name="education">
+                <optgroup label="🇩🇪 Deutsche Schulabschlüsse">
+                    <option value="Abitur">Abitur / Allgemeine Hochschulreife</option>
+                    <option value="Fachhochschulreife">Fachhochschulreife / Fachabitur</option>
+                    <option value="Realschulabschluss">Realschulabschluss / Mittlere Reife</option>
+                    <option value="Hauptschulabschluss">Hauptschulabschluss</option>
+                </optgroup>
+                <optgroup label="🎓 Hochschulstudium (Laufend / Abgeschlossen)">
+                    <option value="IT-Studium (Laufend)" selected>Informatik / KI Studium (Laufend - 1./2. Jahr)</option>
+                    <option value="Bachelor IT">Bachelor-Abschluss (Informatik / MINT)</option>
+                    <option value="Master IT">Master-Abschluss (Informatik / MINT)</option>
+                    <option value="Anderes Studium">Anderes Hochschulstudium (Nicht-IT)</option>
+                </optgroup>
+                <optgroup label="🌍 Ausländische / Internationale Abschlüsse">
+                    <option value="Baccalauréat">Baccalauréat / Ausländisches Abitur</option>
+                    <option value="Bac+1/Bac+2">Bac +1 / Bac +2 (z.B. BTS, DUT, University Year)</option>
+                    <option value="Berufsausbildung">Abgeschlossene Berufsausbildung (Diplom)</option>
+                </optgroup>
+            </select>
+
+            <label>IT-Skills & Kenntnisse (Komma-getrennt):</label>
+            <input type="text" name="skills" placeholder="z.B. Python, SQL, Git, Logic & Algorithms" required>
+
+            <label>Ziel-Ausbildungsposition:</label>
+            <select name="position">
+                {% for key, pos in positions.items() %}
+                    <option value="{{ key }}">{{ pos.title }}</option>
+                {% endfor %}
+            </select>
+
+            <button type="submit">Analyse Starten 🎯</button>
+        </form>
+    </div>
+</body>
+</html>
