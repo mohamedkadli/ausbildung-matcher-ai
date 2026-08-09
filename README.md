@@ -17,3 +17,6 @@ Ein intelligentes Web-Tool zur Bewertung der Übereinstimmung von Bewerberprofil
    ```bash
    git clone [https://github.com/mohamedkadli/ausbildung-matcher-ai.git](https://github.com/mohamedkadli/ausbildung-matcher-ai.git)
    cd ausbildung-matcher-ai
+## 📸 Screenshots
+<img width="612" height="597" alt="image" src="https://github.com/user-attachments/assets/82dc8ad0-9425-4b71-ab63-38a2305a5135" />
+<img width="662" height="461" alt="image" src="https://github.com/user-attachments/assets/3307aedc-4ad5-4a3c-ac6a-18c219891291" />
